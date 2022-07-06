@@ -6,29 +6,29 @@ import I4 from '../img/i4.jpeg';
 export const heropData = [
     {
         id: 1,
-        name: 'Saber',
-        desc: 'Saber',
+        name: 'fruit',
+        desc: 'fruit',
         price: '19.00',
         imgageSrc: I1
     },
     {
         id: 2,
-        name: 'Army',
-        desc: 'Army',
+        name: 'fruit',
+        desc: 'fruit',
         price: '21.00',
         imgageSrc: I2
     },
     {
         id: 3,
-        name: 'Forces',
-        desc: 'Army',
+        name: 'fruit',
+        desc: 'fruit',
         price: '23.00',
         imgageSrc: I3
     },
     {
         id: 4,
-        name: 'Cannon',
-        desc: 'Cannon',
+        name: 'fruit',
+        desc: 'fruit',
         price: '25.00',
         imgageSrc: I4
     },
@@ -37,22 +37,22 @@ export const heropData = [
 export const categories = [
     {
         id: 1,
-        name: 'Saber',
-        urlParamName: 'something',
+        name: 'fruit',
+        urlParamName: 'fruit',
     },
     {
         id: 2,
-        name: 'Saber',
-        urlParamName: 'something',
+        name: 'fruit',
+        urlParamName: 'fruit',
     },
     {
         id: 3,
-        name: 'Saber',
-        urlParamName: 'something',
+        name: 'fruit',
+        urlParamName: 'fruit',
     },
     {
         id: 4,
-        name: 'Saber',
-        urlParamName: 'something',
+        name: 'fruit',
+        urlParamName: 'fruit',
     },
 ];
