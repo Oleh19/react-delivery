@@ -18,13 +18,13 @@ const Header = () => {
     const firebaseAuth = getAuth(app);
     const provider = new GoogleAuthProvider();
 
-    const [{ user }, dispatch] = useStateValue();
+    const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 
     const [isMenu, setIsMenu] = useState(false);
 
     const login = async () => {
         if (!user) {
-            const { user: { oreshToken, providerData } } = await signInWithPopup(firebaseAuth, provider)
+            const { user: { refreshToken, providerData }, } = await signInWithPopup(firebaseAuth, provider)
             dispatch({
                 type: actionType.SET_USER,
                 user: providerData[0],
@@ -41,6 +41,13 @@ const Header = () => {
         dispatch({
             type: actionType.SET_USER,
             user: null,
+        });
+    };
+
+    const showCart = () => {
+        dispatch({
+            type: actionType.SET_CART_SHOW,
+            cartShow: !cartShow,
         });
     };
 
@@ -88,14 +95,18 @@ const Header = () => {
                         </li>
                     </motion.ul>
 
-                    <div className="relative flex items-center justify-center">
+                    <div className="relative flex items-center justify-center"
+                        onClick={showCart}>
                         <MdShoppingBasket
                             className="text-textColor text-2x1 ml-8 cursor-pointer 
                         w-6 h-6 " />
-                        <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full
-                         bg-cartNumBg flex items-center justify-center">
-                            <p className='text-xs text-white font-semibold'>2</p>
-                        </div>
+                        {cartItems && cartItems.lenght > 0 && (
+                            <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full
+                            bg-cartNumBg flex items-center justify-center">
+                                <p className='text-xs text-white font-semibold'>
+                                    {cartItems.lenght}</p>
+                            </div>
+                        )}
                     </div>
 
                     <div className="relative">
@@ -138,12 +149,15 @@ const Header = () => {
             {/* mobile */}
 
             <div className="flex md:hidden w-full h-full items-center justify-between ">
-                <div className="relative flex items-center justify-center">
+                <div className="relative flex items-center justify-center"
+                    onClick={showCart}>
                     <MdShoppingBasket className="text-textColor text-2x1 ml-8 
                     cursor-pointer w-6 h-6 " />
-                    <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full 
-                        bg-cartNumBg flex items-center justify-center">
-                        <p className='text-xs text-white font-semibold'>2</p>
+
+                    <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full
+                            bg-cartNumBg flex items-center justify-center">
+                        <p className='text-xs text-white font-semibold'>
+                            {cartItems.lenght}</p>
                     </div>
                 </div>
 

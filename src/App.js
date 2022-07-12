@@ -3,13 +3,13 @@ import { Routes } from 'react-router';
 import { Route } from 'react-router';
 import { AnimatePresence } from 'framer-motion';
 
-import { Header, CreateContainer, MainContainer } from './components';
+import { Header, CreateContainer, MainContainer, MenuContainer } from './components';
 import { useStateValue } from './components/contex/StateProvider';
 import { getAllFoodItems } from './utils/firebaseFunctions';
 import { actionType } from './components/contex/reducer';
 
 const App = () => {
-  const [{foodItems}, dispatch] = useStateValue();
+  const [{ foodItems }, dispatch] = useStateValue();
 
   const fetchData = async () => {
     await getAllFoodItems().then(data => {

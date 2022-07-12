@@ -37,22 +37,27 @@ export const heropData = [
 export const categories = [
     {
         id: 1,
-        name: 'fruit',
-        urlParamName: 'fruit',
+        name: 'Chicken',
+        urlParamName: 'chicken',
     },
     {
         id: 2,
-        name: 'fruit',
-        urlParamName: 'fruit',
+        name: 'Fish',
+        urlParamName: 'fish',
     },
     {
         id: 3,
-        name: 'fruit',
+        name: 'Fruit',
         urlParamName: 'fruit',
     },
     {
         id: 4,
-        name: 'fruit',
-        urlParamName: 'fruit',
+        name: 'Curry',
+        urlParamName: 'curry',
+    },
+    {
+        id: 5,
+        name: 'Meat',
+        urlParamName: 'meat',
     },
 ];
